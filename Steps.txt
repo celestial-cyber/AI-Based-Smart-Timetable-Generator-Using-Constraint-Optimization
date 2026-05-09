@@ -1,0 +1,138 @@
+Day 1 Task → Project Setup
+Create project folder:
+
+AI_TIMETABLE_GENERATOR
+
+Open terminal inside folder.
+
+Create virtual environment:
+
+python -m venv venv
+
+Activate it: ->.\venv\Scripts\Activate
+
+Windows:
+
+python -m venv venv
+
+Install packages:
+
+pip install flask mysql-connector-python ortools pandas openpyxl reportlab
+
+Freeze requirements:
+
+pip freeze > requirements.txt
+Day 2 — Create Basic Flask App
+
+Create:
+
+app.py
+
+Put this:
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "AI Timetable Generator Running!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+Run:
+
+python app.py
+
+Open:
+
+http://127.0.0.1:5000
+
+If you see:
+
+AI Timetable Generator Running!
+
+✅ Foundation complete.
+
+Day 3 — Create Folder Structure
+
+Create this immediately:
+
+AI_TIMETABLE_GENERATOR/
+│
+├── app.py
+│
+├── templates/
+│   ├── login.html
+│   ├── dashboard.html
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│
+├── database/
+│   └── schema.sql
+│
+├── scheduler/
+│   ├── generator.py
+│   ├── optimizer.py
+│
+├── exports/
+│   ├── pdf_export.py
+│   └── excel_export.py
+│
+└── requirements.txt
+
+Do this before coding anything else.
+
+Day 4–5 — Database Design (MOST IMPORTANT)
+
+Open MySQL Workbench.
+
+Create database:
+
+CREATE DATABASE timetable_db;
+
+Then start tables:
+
+faculty
+CREATE TABLE faculty (
+    faculty_id INT PRIMARY KEY AUTO_INCREMENT,
+    faculty_name VARCHAR(100),
+    department VARCHAR(100)
+);
+subjects
+CREATE TABLE subjects (
+    subject_id INT PRIMARY KEY AUTO_INCREMENT,
+    subject_name VARCHAR(100),
+    hours_per_week INT
+);
+rooms
+CREATE TABLE rooms (
+    room_id INT PRIMARY KEY AUTO_INCREMENT,
+    room_type VARCHAR(50),
+    capacity INT
+);
+classes
+CREATE TABLE classes (
+    class_id INT PRIMARY KEY AUTO_INCREMENT,
+    year INT,
+    section VARCHAR(10)
+);
+
+
+Goal This Week
+
+Only reach this point:
+
+✅ Flask running
+✅ Project structure created
+✅ MySQL connected
+✅ Tables created
+
+
+
+After this, we’ll build:
+
+Admin Dashboard → CRUD → Timetable Generator → AI Optimization
