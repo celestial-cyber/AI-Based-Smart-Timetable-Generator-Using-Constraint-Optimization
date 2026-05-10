@@ -1,0 +1,84 @@
+
+==========================================================================================================================================================
+DAY 03 - 10 May
+==========================================================================================================================================================
+```
+
+# Day 3 Progress – AI Timetable Generator
+
+### Objectives Completed
+
+Successfully connected Flask with MySQL database for the AI Timetable Generator project.
+
+### Tasks Completed
+
+✅ Installed required packages:
+
+```bash
+pip install flask flask-mysqldb mysqlclient
+pip install pymysql
+```
+
+✅ Created new MySQL database:
+
+```text
+project_timetable
+```
+
+✅ Imported `schema.sql` into database using XAMPP/phpMyAdmin
+
+✅ Connected Flask application with MySQL database using PyMySQL
+
+✅ Successfully ran Flask development server
+
+✅ Verified project execution in browser using:
+
+```text
+http://127.0.0.1:5000
+```
+
+Output received:
+
+```text
+AI Timetable Generator Running!
+```
+
+✅ Verified successful database connection
+
+Output received:
+
+```text
+Database Connected Successfully!
+```
+
+✅ Verified database tables:
+
+```text
+classes
+departments
+faculty
+faculty_subjects
+rooms
+subjects
+timetable
+```
+
+✅ Created database connection file:
+
+```text
+database/db.py
+```
+
+✅ Added database connection function:
+
+```python
+get_db_connection()
+```
+
+### Key Learning
+
+Understood Flask ↔ MySQL database connection, importing schema into phpMyAdmin, and resolving database connection/import errors.
+
+### Next Goal (Day 4)
+
+Begin backend CRUD operations and fetch data from database into Flask for faculty, subjects, rooms, and classes management.

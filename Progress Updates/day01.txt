@@ -1,4 +1,4 @@
-Day 1 Task → Project Setup
+Day 1 Task → Project Setup - 09 May
 Create project folder:
 
 AI_TIMETABLE_GENERATOR
@@ -136,3 +136,5 @@ Only reach this point:
 After this, we’ll build:
 
 Admin Dashboard → CRUD → Timetable Generator → AI Optimization
+
+
