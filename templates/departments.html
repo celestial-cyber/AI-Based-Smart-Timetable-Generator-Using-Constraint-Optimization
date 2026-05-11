@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>Departments</title>
+
+<body>
+    <h1> Departments Management</h1>
+    <form method ="POST">
+        <input
+                type ="text"
+                name="department_name"
+                placeholder="Enter Department Name"
+                required>
+
+        <button type = "submit">
+            Add Department
+        </button>
+                    
+            
+    </form>
+    <h2>Departments List</h2>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+    </tr>
+
+    {% for dept in departments %}
+
+    <tr>
+        <td>{{ dept[0] }}</td>
+        <td>{{ dept[1] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+</body>
+</html>

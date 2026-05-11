@@ -1,0 +1,48 @@
+Week 1:
+✔ Flask setup
+✔ Database setup
+
+Week 2:
+⬜ CRUD APIs
+⬜ Faculty management
+⬜ Subject management
+
+Week 3:
+⬜ Constraint definitions
+⬜ OR-Tools integration
+
+Week 4:
+⬜ Timetable generation
+⬜ Dashboard UI
+
+Week 5:
+⬜ Export PDF/Excel
+⬜ Testing
+
+
+========================================================================================
+module 1
+=====================================================================================
+Constraints
+Scheduling rules
+Faculty workload
+Subject allocation
+Lab theory conflicts
+Optimization validation
+
+
+
+================================================================================
+module 2
+================================================================================
+Database
+Flask APIs
+Frontend
+Dashboard
+Timetable display
+Export PDF/Excel
+
+
+
+HTML Form → Flask Route → Flask Receives Data -> data on cnsole
+

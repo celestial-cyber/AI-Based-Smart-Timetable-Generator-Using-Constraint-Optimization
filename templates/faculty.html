@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Faculty</title>
+</head>
+
+<body>
+
+    <h1>Faculty Management</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="faculty_name"
+            placeholder="Faculty Name"
+            maxlength = "50"
+            required
+        >
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+        >
+
+        <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+        >
+
+        <input
+            type="number"
+            name="dept_id"
+            placeholder="Department ID"
+            min ="1"
+            required
+        >
+
+        <input
+            type="text"
+            name="designation"
+            placeholder="Designation"
+            maxlength = "50"
+            required
+        >
+
+        <input
+            type="number"
+            name="max_hours"
+            placeholder="Max Hours"
+            min ="1"
+            max="40"
+            required
+        >
+
+        <button type="submit">
+            Add Faculty
+        </button>
+
+    </form>
+
+    <h2>Faculty List</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department ID</th>
+            <th>Designation</th>
+            <th>Max Hours</th>
+        </tr>
+
+        {% for fac in faculty %}
+
+        <tr>
+            <td>{{ fac[0] }}</td>
+            <td>{{ fac[1] }}</td>
+            <td>{{ fac[2] }}</td>
+            <td>{{ fac[3] }}</td>
+            <td>{{ fac[4] }}</td>
+            <td>{{ fac[5] }}</td>
+            <td>{{ fac[6] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

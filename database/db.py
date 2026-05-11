@@ -5,7 +5,7 @@ def get_db_connection():
         host='localhost',
         user='root',
         password='',
-        database='time_table',
+        database='project_timetable',
         cursorclass=pymysql.cursors.DictCursor
     )
     return connection

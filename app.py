@@ -1,7 +1,12 @@
 from flask import Flask, jsonify
 from database.db import get_db_connection
-
+from routes.department_routes import register_department_routes
+from routes.faculty_routes import register_faculty_routes
 app = Flask(__name__)
+
+register_department_routes(app)
+register_faculty_routes(app)
+
 
 
 @app.route('/')
@@ -9,21 +14,7 @@ def home():
     return "AI Timetable Generator Running"
 
 
-@app.route('/faculty')
-def faculty():
 
-    connection = get_db_connection()
-    cursor = connection.cursor()
-
-    query = "SELECT * FROM faculty"
-    cursor.execute(query)
-
-    faculty_data = cursor.fetchall()
-
-    cursor.close()
-    connection.close()
-
-    return jsonify(faculty_data)
 
 
 if __name__ == "__main__":

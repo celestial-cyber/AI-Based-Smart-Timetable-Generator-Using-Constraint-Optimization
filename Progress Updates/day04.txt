@@ -1,0 +1,348 @@
+
+
+# Day 04 Progress Report – AI Timetable Generator
+
+**Date:** 11 May 2026
+
+## Objective Completed
+
+Successfully developed backend CRUD foundation for **Departments** and **Faculty Management** modules using **Flask + MySQL**, including form handling, database insertion, route modularization, and frontend validation.
+
+---
+
+## Tasks Completed
+
+### 1. Modular Route Architecture Setup
+
+✅ Shifted routes from `app.py` to separate route files for cleaner project structure.
+
+Created:
+
+```text
+routes/
+│── department_routes.py
+│── faculty_routes.py
+│── __init__.py
+```
+
+Implemented route registration system:
+
+```python
+register_department_routes(app)
+register_faculty_routes(app)
+```
+
+**Learning:** Understood modular Flask architecture and route separation.
+
+---
+
+### 2. Departments Module Development
+
+#### Backend Development
+
+✅ Created `/departments` route
+
+Implemented:
+
+* `GET` request → render HTML page
+* `POST` request → receive department data from form
+* MySQL insertion using `INSERT INTO`
+* Database commit using:
+
+```python
+connection.commit()
+```
+
+#### Database Integration
+
+Successfully connected:
+
+```text
+Departments Form → Flask → MySQL
+```
+
+Table used:
+
+```text
+departments
+```
+
+Column mapped:
+
+```text
+dept_name
+```
+
+#### Frontend Development
+
+Created:
+
+```text
+departments.html
+```
+
+Features added:
+
+✅ Department input form
+✅ Submit button
+✅ Dynamic department list table
+
+Displayed:
+
+```text
+Department ID
+Department Name
+```
+
+#### Issues Resolved
+
+✅ `TemplateNotFound` error
+→ Fixed by creating proper `templates/` folder
+
+✅ `405 Method Not Allowed`
+→ Fixed using:
+
+```python
+methods=['GET', 'POST']
+```
+
+✅ Database mismatch issue
+
+```text
+Unknown database 'time_table'
+```
+
+→ Fixed DB name:
+
+```text
+project_timetable
+```
+
+✅ Column mismatch:
+
+```text
+department_name
+```
+
+→ Corrected to:
+
+```text
+dept_name
+```
+
+✅ Table lock issue:
+
+```text
+Lock wait timeout exceeded
+```
+
+→ Resolved by restarting MySQL/XAMPP.
+
+---
+
+### 3. Faculty Module Development
+
+#### Backend Development
+
+Created:
+
+```text
+faculty_routes.py
+```
+
+Implemented:
+
+* Faculty form submission
+* Flask POST handling
+* MySQL insertion
+* Fetch and display faculty records
+
+#### Database Enhancements
+
+Recognized missing workload field required for timetable optimization.
+
+Added new column:
+
+```sql
+ALTER TABLE faculty
+ADD max_hours INT NOT NULL DEFAULT 20;
+```
+
+This supports:
+
+* Faculty workload constraints
+* Scheduling optimization
+* Fair teaching load allocation
+
+#### Faculty Fields Implemented
+
+```text
+Faculty Name
+Email
+Phone Number
+Department ID
+Designation
+Max Hours
+```
+
+#### Validation Constraints Added
+
+##### Faculty Name
+
+```text
+Maximum 50 characters
+```
+
+##### Email
+
+```text
+Proper email format validation
+```
+
+##### Phone Number
+
+```text
+Exactly 10 digits
+```
+
+##### Department ID
+
+```text
+Minimum value = 1
+```
+
+##### Designation
+
+```text
+Maximum 50 characters
+```
+
+##### Max Hours
+
+```text
+Allowed range = 1–40
+```
+
+---
+
+## Technical Concepts Learned
+
+### Flask Concepts
+
+* Route modularization
+* GET and POST methods
+* `request.form[]`
+* `render_template()`
+* Route registration system
+
+### Database Concepts
+
+* SQL `INSERT`
+* SQL `SELECT`
+* Foreign keys
+* Schema mismatch debugging
+* Table alteration using:
+
+```sql
+ALTER TABLE
+```
+
+### Debugging Skills
+
+Learned to resolve:
+
+* `TemplateNotFound`
+* `BadRequestKeyError`
+* `ModuleNotFoundError`
+* `OperationalError`
+* Route conflicts
+* Column mismatch issues
+
+---
+
+## Current Project Status
+
+### Completed
+
+Week 1:
+✅ Flask setup
+✅ Database setup
+
+Week 2:
+🟨 CRUD APIs (In Progress)
+
+Modules Completed:
+✅ Departments CRUD
+🟨 Faculty CRUD (almost complete)
+
+---
+
+## Next Task (Day 05 – Tomorrow)
+
+### Subject Management Module
+
+Create:
+
+```text
+subject_routes.py
+subjects.html
+```
+
+### Features to Develop
+
+#### Add Subject Form
+
+Fields:
+
+```text
+Subject Code
+Subject Name
+Hours Per Week
+Lab / Theory
+Semester
+Department ID
+```
+
+#### CRUD Functionality
+
+Implement:
+
+```text
+Form → Flask → MySQL → Display Table
+```
+
+#### Add Constraints
+
+Suggested validations:
+
+```text
+Subject Code → max 20 chars
+Subject Name → max 100 chars
+Hours Per Week → 1–10
+Semester → 1–8
+Department ID → valid dept_id
+```
+
+#### Display Table
+
+Show:
+
+```text
+Subject ID
+Subject Code
+Subject Name
+Hours Per Week
+Lab/Theory
+Semester
+Department ID
+```
+
+### Goal for Tomorrow
+
+Complete:
+
+```text
+Subjects Module CRUD
+```
+
+so that the core academic data layer is ready before timetable generation and optimization.
