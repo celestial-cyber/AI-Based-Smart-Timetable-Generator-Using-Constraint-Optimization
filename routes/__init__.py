@@ -1,0 +1,1 @@
+from .subject_routes import register_subject_routes

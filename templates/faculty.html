@@ -15,16 +15,14 @@
             type="text"
             name="faculty_name"
             placeholder="Faculty Name"
-            maxlength = "50"
-            required
-        >
+            maxlength="50"
+            required>
 
         <input
             type="email"
             name="email"
             placeholder="Email"
-            required
-        >
+            required>
 
         <input
             type="tel"
@@ -32,33 +30,29 @@
             placeholder="Phone Number"
             pattern="[0-9]{10}"
             maxlength="10"
-            required
-        >
+            required>
 
         <input
             type="number"
             name="dept_id"
             placeholder="Department ID"
-            min ="1"
-            required
-        >
+            min="1"
+            required>
 
         <input
             type="text"
             name="designation"
             placeholder="Designation"
-            maxlength = "50"
-            required
-        >
+            maxlength="50"
+            required>
 
         <input
             type="number"
             name="max_hours"
             placeholder="Max Hours"
-            min ="1"
+            min="1"
             max="40"
-            required
-        >
+            required>
 
         <button type="submit">
             Add Faculty
@@ -78,6 +72,7 @@
             <th>Department ID</th>
             <th>Designation</th>
             <th>Max Hours</th>
+            <th>Actions</th>
         </tr>
 
         {% for fac in faculty %}
@@ -90,6 +85,25 @@
             <td>{{ fac[4] }}</td>
             <td>{{ fac[5] }}</td>
             <td>{{ fac[6] }}</td>
+
+            <td>
+
+                <a href="/faculty/edit/{{ fac[0] }}">
+                    Edit
+                </a>
+
+                |
+
+                <a
+                    href="/faculty/delete/{{ fac[0] }}"
+                    onclick="return confirm('Delete this faculty member?')">
+
+                    Delete
+
+                </a>
+
+            </td>
+
         </tr>
 
         {% endfor %}
@@ -97,4 +111,5 @@
     </table>
 
 </body>
+
 </html>
