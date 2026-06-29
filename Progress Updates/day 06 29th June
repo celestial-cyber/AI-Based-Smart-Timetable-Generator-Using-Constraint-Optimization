@@ -1,0 +1,149 @@
+
+
+Room Management (room_routes.py + rooms.html)
+Class Management (class_routes.py + classes.html)
+Dashboard (dashboard_routes.py + dashboard.html)
+Faculty-Subject Mapping
+Timetable Generation
+AI Optimization
+
+
+# 📅 29 June — Day 06 Progress (AI Timetable Generator Project)
+
+---
+
+# 🧠 1. System Design Completed
+
+You finalized a full relational database architecture for an AI-based timetable system:
+
+### 🗄️ Core Tables
+
+* departments ✔
+* faculty ✔
+* subjects ✔
+* classes ✔
+* rooms ✔
+* timetable ✔
+
+### 🔗 Relationship Table
+
+* faculty_subjects ✔
+
+👉 This created a fully normalized scheduling database.
+
+---
+
+# ⚙️ 2. Data Modeling & Constraints
+
+You implemented and validated:
+
+* Faculty ↔ Subject mapping system
+* Department-based organization
+* Class structure (year, semester, section)
+* Foreign key relationships across all modules
+
+👉 Ensured data integrity for scheduling logic.
+
+---
+
+# 📥 3. Data Insertion Phase (Completed + Debugged)
+
+You successfully:
+
+* Inserted class records correctly
+* Built faculty-subject mappings
+* Handled duplicate entry conflicts
+* Resolved foreign key dependency errors
+
+👉 Strengthened understanding of relational dependencies.
+
+---
+
+# 🧩 4. Backend Setup Completed
+
+You configured full backend environment:
+
+* MariaDB running on **port 3307**
+* Python environment set up with venv
+* Database connection via **PyMySQL**
+* Resolved connector mismatch issues
+
+---
+
+# ⚙️ 5. AI Scheduler Engine (Implemented)
+
+You built a working scheduling system with:
+
+* Greedy assignment algorithm
+* Constraint checks:
+
+  * class conflict prevention
+  * faculty clash prevention
+  * room conflict prevention
+* Automatic timetable insertion into DB
+
+👉 This is your core AI logic layer.
+
+---
+
+# 🐞 6. Issues Resolved During Development
+
+You successfully debugged:
+
+* Missing Python imports (`defaultdict`)
+* MySQL port mismatch (3306 vs 3307)
+* Foreign key constraint violations
+* Duplicate entry errors in mapping table
+* File execution path issues
+
+---
+
+# 🧠 7. Current System State
+
+Your project pipeline is now:
+
+```text
+Database Schema ✔
+Data Insertion ✔
+Relationship Mapping ✔
+Constraint System ✔
+AI Scheduling Engine ✔ (basic version)
+Timetable Output Generation ✔
+```
+
+---
+
+# 🚀 8. Next Steps (Important Phase)
+
+## 🟢 Phase 2: Algorithm Improvement
+
+* Replace greedy logic with:
+
+  * backtracking scheduler OR
+  * priority-based allocation
+
+---
+
+## 🟢 Phase 3: Multi-Class Automation
+
+* Generate timetables for ALL classes automatically
+
+---
+
+## 🟢 Phase 4: Web System Upgrade
+
+* Flask API:
+
+  * `/generate-timetable`
+  * `/view-timetable`
+
+---
+
+## 🟢 Phase 5: AI Enhancement (Optional)
+
+* reduce gaps in schedule
+* balance faculty workload
+* optimize room utilization
+
+---
+

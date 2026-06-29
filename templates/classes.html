@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Class Management</title>
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            margin:40px;
+            background:#f4f6f9;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        form{
+            width:450px;
+            background:white;
+            padding:20px;
+            border-radius:8px;
+            box-shadow:0 0 10px lightgray;
+            margin-bottom:30px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:8px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:#007BFF;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        table,th,td{
+            border:1px solid #ccc;
+        }
+
+        th,td{
+            padding:12px;
+            text-align:center;
+        }
+
+        th{
+            background:#007BFF;
+            color:white;
+        }
+
+        a{
+            color:red;
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>Class Management</h1>
+
+<form method="POST">
+
+    <label>Department ID</label>
+    <input type="number" name="dept_id" min="1" required>
+
+    <label>Year</label>
+    <input type="number" name="year" min="1" max="4" required>
+
+    <label>Semester</label>
+    <input type="number" name="semester" min="1" max="8" required>
+
+    <label>Section</label>
+    <input type="text" name="section" maxlength="10" required>
+
+    <label>Strength</label>
+    <input type="number" name="strength" min="1" required>
+
+    <button type="submit">Add Class</button>
+
+</form>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Department</th>
+    <th>Year</th>
+    <th>Semester</th>
+    <th>Section</th>
+    <th>Strength</th>
+    <th>Action</th>
+</tr>
+
+{% for c in classes %}
+
+<tr>
+
+<td>{{ c[0] }}</td>
+<td>{{ c[1] }}</td>
+<td>{{ c[2] }}</td>
+<td>{{ c[3] }}</td>
+<td>{{ c[4] }}</td>
+<td>{{ c[5] }}</td>
+
+<td>
+<a href="/classes/delete/{{ c[0] }}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
