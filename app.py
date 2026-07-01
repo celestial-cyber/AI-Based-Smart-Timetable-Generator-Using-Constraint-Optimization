@@ -6,6 +6,7 @@ from routes.subject_routes import register_subject_routes
 from routes.room_routes import register_room_routes
 from routes.class_routes import register_class_routes
 from routes.dashboard_routes import register_dashboard_routes
+from routes.timetable_routes import register_timetable_routes
 
 app = Flask(__name__)
 
@@ -15,6 +16,7 @@ register_subject_routes(app)
 register_room_routes(app)
 register_class_routes(app)
 register_dashboard_routes(app)
+register_timetable_routes(app)
 
 @app.route('/')
 def home():
